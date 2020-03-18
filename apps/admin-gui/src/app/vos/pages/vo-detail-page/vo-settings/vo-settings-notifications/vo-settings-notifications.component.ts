@@ -2,7 +2,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {
   DeleteNotificationDialogComponent
 } from '../../../../../shared/components/dialogs/delete-notification-dialog/delete-notification-dialog.component';

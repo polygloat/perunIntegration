@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ExtSource } from '@perun-web-apps/perun/openapi';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { ExtSourceService } from '@perun-web-apps/perun/services';
 
 export interface AddExtSourceDialogData {

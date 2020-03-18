@@ -6,7 +6,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material';
 import { AddExtSourceDialogComponent } from '../../../../../shared/components/dialogs/add-ext-source-dialog/add-ext-source-dialog.component';
 import { NotificatorService } from '../../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 
 @Component({
   selector: 'app-vo-settings-extsources',

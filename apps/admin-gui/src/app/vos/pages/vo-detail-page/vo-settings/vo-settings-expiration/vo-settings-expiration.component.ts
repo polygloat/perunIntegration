@@ -2,7 +2,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 import {openClose} from '../../../../../shared/animations/Animations';
 import {ActivatedRoute} from '@angular/router';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import { Urns } from '@perun-web-apps/perun/urns';
 import { ApiRequestConfigurationService } from '../../../../../core/services/api/api-request-configuration.service';
 import { Attribute, AttributesManagerService } from '@perun-web-apps/perun/openapi';

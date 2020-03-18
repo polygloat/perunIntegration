@@ -6,7 +6,7 @@ import {map, startWith} from 'rxjs/operators';
 import {openClose} from '../../../animations/Animations';
 import {GroupFlatNode} from '../../../../vos/components/groups-tree/groups-tree.component';
 import {NotificatorService} from '../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import { GroupService } from '@perun-web-apps/perun/services';
 import { Group } from '@perun-web-apps/perun/openapi';
 import { ApiRequestConfigurationService } from '../../../../core/services/api/api-request-configuration.service';

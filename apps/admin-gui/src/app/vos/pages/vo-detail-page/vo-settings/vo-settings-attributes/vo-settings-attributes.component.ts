@@ -10,7 +10,7 @@ import {
 import {Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {AttributesListComponent} from '../../../../../shared/components/attributes-list/attributes-list.component';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import { filterCoreAttributes } from '@perun-web-apps/perun/utils';
 import { Attribute, AttributesManagerService } from '@perun-web-apps/perun/openapi';
 

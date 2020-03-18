@@ -1,6 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
 import { Urns } from '@perun-web-apps/perun/urns';
 import { ApiRequestConfigurationService } from '../../../../../core/services/api/api-request-configuration.service';

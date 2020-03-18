@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { NotificatorService } from '../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { SelectionModel } from '@angular/cdk/collections';
 import { AttributeDefinition } from '@perun-web-apps/perun/openapi';
 import { AttributeValueComponent } from '../attributes-list/attribute-value/attribute-value.component';

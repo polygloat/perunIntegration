@@ -32,7 +32,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SideMenuComponent} from './side-menu/side-menu.component';
 import {SideMenuItemComponent} from './side-menu/side-menu-item/side-menu-item.component';
 import {MenuButtonsFieldComponent} from './components/menu-buttons-field/menu-buttons-field.component';
-import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {NgxPolygloatModule, TranslateService} from 'ngx-polygloat';
 import {CreateGroupDialogComponent} from './components/dialogs/create-group-dialog/create-group-dialog.component';
 import {InviteMemberDialogComponent} from './components/dialogs/invite-member-dialog/invite-member-dialog.component';
 import {UserFullNamePipe} from './pipes/user-full-name.pipe';
@@ -182,7 +182,11 @@ import { ExtSourceTypePipe } from './pipes/ext-source-type.pipe';
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    TranslateModule.forChild({}),
+    NgxPolygloatModule.forRoot({
+      apiKey: "knks527b0mh6iotn3e0mmdgmrr",
+      apiUrl: "http://localhost:8080"
+    }),
+    //TranslateModule.forChild({}),
     MatButtonModule,
     MatSortModule,
     MatTableModule,
@@ -230,7 +234,7 @@ import { ExtSourceTypePipe } from './pipes/ext-source-type.pipe';
     MatIconModule,
     SideMenuComponent,
     MatSidenavModule,
-    TranslateModule,
+    NgxPolygloatModule,
     MenuButtonsFieldComponent,
     MatSortModule,
     MatTableModule,
@@ -493,6 +497,7 @@ import { ExtSourceTypePipe } from './pipes/ext-source-type.pipe';
 })
 export class SharedModule {
   constructor(private translate: TranslateService) {
-    translate.addLangs(['en', 'cs']);
+
+    //translate.addLangs(['en', 'cs']);
   }
 }

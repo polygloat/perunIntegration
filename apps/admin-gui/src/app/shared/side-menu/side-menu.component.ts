@@ -5,7 +5,8 @@ import {AppComponent} from '../../app.component';
 import {SideMenuItemService} from './side-menu-item.service';
 import {AuthResolverService} from '../../core/services/common/auth-resolver.service';
 import {rollInOut} from '../animations/Animations';
-import { StoreService } from '../../core/services/common/store.service';
+import {StoreService} from '../../core/services/common/store.service';
+import {TranslateService} from "ngx-polygloat";
 
 @Component({
   selector: 'app-side-menu',
@@ -21,8 +22,10 @@ export class SideMenuComponent implements OnInit {
     private sideMenuService: SideMenuService,
     private sideMenuItemService: SideMenuItemService,
     public authResolver: AuthResolverService,
-    private store: StoreService
-  ) { }
+    private store: StoreService,
+    private translateService: TranslateService
+  ) {
+  }
 
   accessItems: SideMenuItem[] = [];
   facilityItems: SideMenuItem[] = [];
@@ -30,7 +33,7 @@ export class SideMenuComponent implements OnInit {
   userItems: SideMenuItem[] = [];
 
   accessItem = this.sideMenuItemService.getAccessManagementItem();
-  adminItem = this.sideMenuItemService.getAdminItem();
+  adminItem = null;
   facilityItem = this.sideMenuItemService.getFacilitiesManagementItem();
   userItem = this.sideMenuItemService.getUserItem(this.store.getPerunPrincipal().user);
 
@@ -43,6 +46,7 @@ export class SideMenuComponent implements OnInit {
   backgroundColor = this.store.get('theme', 'sidemenu_bg_color');
 
   ngOnInit(): void {
+    this.translateService.get("").subscribe(() => this.sideMenuItemService.getAdminItem());
 
     this.mobileView = window.innerWidth <= AppComponent.minWidth;
     if (this.mobileView) {
@@ -69,35 +73,35 @@ export class SideMenuComponent implements OnInit {
   }
 
   private reset(): void {
-      this.adminItemOpened = false;
-      this.userItemOpened = false;
-      this.setNewItems(this.userItems, []);
-      this.setNewItems(this.adminItems, []);
-      this.setNewItems(this.accessItems, []);
-      this.setNewItems(this.facilityItems, []);
+    this.adminItemOpened = false;
+    this.userItemOpened = false;
+    this.setNewItems(this.userItems, []);
+    this.setNewItems(this.adminItems, []);
+    this.setNewItems(this.accessItems, []);
+    this.setNewItems(this.facilityItems, []);
   }
 
   private resetExceptFacility(): void {
-      this.adminItemOpened = false;
-      this.userItemOpened = false;
-      this.setNewItems(this.userItems, []);
-      this.setNewItems(this.adminItems, []);
-      this.setNewItems(this.accessItems, []);
+    this.adminItemOpened = false;
+    this.userItemOpened = false;
+    this.setNewItems(this.userItems, []);
+    this.setNewItems(this.adminItems, []);
+    this.setNewItems(this.accessItems, []);
   }
 
   private resetExceptAccess(): void {
-      this.adminItemOpened = false;
-      this.userItemOpened = false;
-      this.setNewItems(this.userItems, []);
-      this.setNewItems(this.adminItems, []);
-      this.setNewItems(this.facilityItems, []);
+    this.adminItemOpened = false;
+    this.userItemOpened = false;
+    this.setNewItems(this.userItems, []);
+    this.setNewItems(this.adminItems, []);
+    this.setNewItems(this.facilityItems, []);
   }
 
   private resetExceptAdmin(): void {
-      this.userItemOpened = false;
-      this.setNewItems(this.userItems, []);
-      this.setNewItems(this.accessItems, []);
-      this.setNewItems(this.facilityItems, []);
+    this.userItemOpened = false;
+    this.setNewItems(this.userItems, []);
+    this.setNewItems(this.accessItems, []);
+    this.setNewItems(this.facilityItems, []);
   }
 
   private resetExceptUser(): void {
@@ -108,8 +112,8 @@ export class SideMenuComponent implements OnInit {
   }
 
   private setFacilityItems(items: SideMenuItem[]) {
-      this.resetExceptFacility();
-      this.setNewItems(this.facilityItems, items);
+    this.resetExceptFacility();
+    this.setNewItems(this.facilityItems, items);
   }
 
   private setAccessItems(items: SideMenuItem[]) {
@@ -142,7 +146,7 @@ export class SideMenuComponent implements OnInit {
   private setNewItems(originItems: SideMenuItem[], newItems: SideMenuItem[]) {
     const maxLength = originItems.length > newItems.length ? originItems.length : newItems.length;
 
-    for (let i = 0; i < maxLength; i ++) {
+    for (let i = 0; i < maxLength; i++) {
       if (i > originItems.length - 1) {
         originItems.push(newItems[i]);
       } else if (i > newItems.length - 1) {
@@ -181,7 +185,7 @@ export interface SideMenuItem {
 
 export interface EntityMenuLink {
   label: string;
-  url:  any[] | string;
+  url: any[] | string;
   activatedRegex: string;
   children?: EntityMenuLink[];
   showChildrenRegex?: string;

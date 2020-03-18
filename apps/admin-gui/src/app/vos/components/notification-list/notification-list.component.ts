@@ -4,7 +4,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {
   AddEditNotificationDialogComponent
 } from '../../../shared/components/dialogs/add-edit-notification-dialog/add-edit-notification-dialog.component';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {NotificatorService} from '../../../core/services/common/notificator.service';
 import { RegistrarService } from '@perun-web-apps/perun/services';
 import { ApplicationMail } from '@perun-web-apps/perun/models';

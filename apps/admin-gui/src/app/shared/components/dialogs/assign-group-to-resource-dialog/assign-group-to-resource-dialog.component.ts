@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { GroupService, ResourcesService } from '@perun-web-apps/perun/services';
 import { Group, Resource } from '@perun-web-apps/perun/openapi';
 import { SelectionModel } from '@angular/cdk/collections';

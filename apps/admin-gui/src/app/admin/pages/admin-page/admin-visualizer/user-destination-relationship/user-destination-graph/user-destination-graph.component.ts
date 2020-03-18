@@ -2,7 +2,7 @@ import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as shape from 'd3-shape';
 import { Subject } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import {
   FacilityService,
   MembersService,

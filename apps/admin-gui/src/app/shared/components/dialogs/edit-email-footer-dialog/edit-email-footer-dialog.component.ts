@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {NotificatorService} from '../../../../core/services/common/notificator.service';
 import { Urns } from '@perun-web-apps/perun/urns';
 import { Attribute, AttributesManagerService } from '@perun-web-apps/perun/openapi';

@@ -5,7 +5,7 @@ import {
   DeleteApplicationFormItemDialogComponent
 } from '../../../shared/components/dialogs/delete-application-form-item-dialog/delete-application-form-item-dialog.component';
 import {NotificatorService} from '../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {
   EditApplicationFormItemDialogComponent
 } from '../../../shared/components/dialogs/edit-application-form-item-dialog/edit-application-form-item-dialog.component';

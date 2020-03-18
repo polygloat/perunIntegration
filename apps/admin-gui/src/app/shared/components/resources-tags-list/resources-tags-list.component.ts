@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewChild} fr
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {NotificatorService} from '../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import { ResourcesService } from '@perun-web-apps/perun/services';
 import { ResourceTag } from '@perun-web-apps/perun/openapi';
 

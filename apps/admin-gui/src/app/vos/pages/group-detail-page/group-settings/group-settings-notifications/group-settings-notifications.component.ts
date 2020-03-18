@@ -1,6 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {MatDialog} from '@angular/material';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
 import {SelectionModel} from '@angular/cdk/collections';

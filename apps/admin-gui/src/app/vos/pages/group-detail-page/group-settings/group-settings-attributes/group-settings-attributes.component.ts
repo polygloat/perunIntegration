@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {SelectionModel} from '@angular/cdk/collections';
 import {AttributesListComponent} from '../../../../../shared/components/attributes-list/attributes-list.component';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {MatDialog} from '@angular/material';
 import {
   CreateAttributeDialogComponent

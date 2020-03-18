@@ -5,7 +5,7 @@ import {
   UpdateApplicationFormDialogComponent
 } from '../../../../../shared/components/dialogs/update-application-form-dialog/update-application-form-dialog.component';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {
   ApplicationFormCopyItemsDialogComponent
 } from '../../../../../shared/components/dialogs/application-form-copy-items-dialog/application-form-copy-items-dialog.component';

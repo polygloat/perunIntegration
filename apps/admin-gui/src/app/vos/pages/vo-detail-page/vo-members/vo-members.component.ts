@@ -3,7 +3,7 @@ import { SideMenuService } from '../../../../core/services/common/side-menu.serv
 import { ActivatedRoute } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { MatDialog } from '@angular/material';
 import { RemoveMembersDialogComponent } from '../../../../shared/components/dialogs/remove-members-dialog/remove-members-dialog.component';
 import { AddMemberDialogComponent } from '../../../../shared/components/dialogs/add-member-dialog/add-member-dialog.component';

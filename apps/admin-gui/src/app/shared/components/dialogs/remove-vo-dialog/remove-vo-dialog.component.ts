@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatTableDataSource } from '@angular/material';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { VoService } from '@perun-web-apps/perun/services';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
 import { Vo } from '@perun-web-apps/perun/openapi';

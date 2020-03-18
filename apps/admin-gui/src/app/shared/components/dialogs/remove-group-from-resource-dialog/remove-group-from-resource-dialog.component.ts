@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatTableDataSource } from '@angular/mate
 import { Group } from '@perun-web-apps/perun/openapi';
 import { ResourcesService } from '@perun-web-apps/perun/services';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 
 export interface RemoveGroupFromResourceDialogData {
   resourceId: number;

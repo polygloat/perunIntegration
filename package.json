@@ -60,7 +60,8 @@
     "oidc-client": "^1.10.1",
     "rxjs": "~6.5.4",
     "tinycolor2": "^1.4.1",
-    "zone.js": "^0.10.2"
+    "zone.js": "^0.10.2",
+    "ngx-polygloat": "file:../polygloat/clients/angular/dist/ngx-polygloat"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.23",

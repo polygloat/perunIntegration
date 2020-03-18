@@ -1,28 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, forwardRef, NgModule, Provider } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {APP_INITIALIZER, forwardRef, NgModule, Provider} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
-import { MainMenuPageComponent } from './main-menu-page/main-menu-page.component';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import {MainMenuPageComponent} from './main-menu-page/main-menu-page.component';
+import {NgxPolygloatModule, TranslateService} from 'ngx-polygloat';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CoreModule} from './core/core.module';
 import {RouteReuseStrategy} from '@angular/router';
 import {CacheRouteReuseStrategy} from './core/services/common/cache-route-reuse-strategy';
 import {MatIconModule} from '@angular/material';
 import {CustomIconService} from './core/services/api/custom-icon.service';
-import { PERUN_API_SERVICE } from '@perun-web-apps/perun/tokens';
-import { ApiService } from './core/services/api/api.service';
-import { AppConfigService } from './core/services/common/app-config.service';
+import {PERUN_API_SERVICE} from '@perun-web-apps/perun/tokens';
+import {ApiService} from './core/services/api/api.service';
+import {AppConfigService} from './core/services/common/app-config.service';
 // @ts-ignore
-import { ApiModule, Configuration, ConfigurationParameters } from '@perun-web-apps/perun/openapi';
-// @ts-ignore
-import { ApiConfiguration } from '@perun-web-apps/perun/openapi';
-import { StoreService } from './core/services/common/store.service';
-import { ApiInterceptor } from './core/services/api/ApiInterceptor';
+import {ApiModule, Configuration, ConfigurationParameters} from '@perun-web-apps/perun/openapi';
+import {StoreService} from './core/services/common/store.service';
+import {ApiInterceptor} from './core/services/api/ApiInterceptor';
 
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
@@ -68,16 +66,24 @@ const loadConfigs = (appConfig: AppConfigService) => {
     CoreModule,
     AppRoutingModule,
     MatIconModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+    ApiModule,
+    NgxPolygloatModule.forRoot({
+      apiKey: "knks527b0mh6iotn3e0mmdgmrr",
+      apiUrl: "http://localhost:8080"
     }),
-    ApiModule
   ],
   providers: [
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (service: TranslateService) => {
+        return async () => {
+          await service.get("").toPromise();
+        }
+      },
+      deps: [TranslateService],
+      multi: true
+    },
     AppConfigService,
     {
       provide: APP_INITIALIZER,
@@ -96,8 +102,8 @@ const loadConfigs = (appConfig: AppConfigService) => {
       deps: [StoreService]
     },
     {
-    provide: RouteReuseStrategy,
-    useClass: CacheRouteReuseStrategy
+      provide: RouteReuseStrategy,
+      useClass: CacheRouteReuseStrategy
     },
     CustomIconService,
     {
@@ -113,10 +119,7 @@ export class AppModule {
 
   constructor(
     private customIconService: CustomIconService,
-    private translate: TranslateService
   ) {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
     this.customIconService.registerPerunRefreshIcon();
   }
 }

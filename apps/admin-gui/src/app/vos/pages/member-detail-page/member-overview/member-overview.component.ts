@@ -1,12 +1,12 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {ActivatedRoute} from '@angular/router';
 import {MenuItem} from '../../../../shared/models/MenuItem';
-import { MembersService } from '@perun-web-apps/perun/services';
-import { RichMember } from '@perun-web-apps/perun/openapi';
-import { Urns } from '@perun-web-apps/perun/urns';
-import { parseFullName, parseStatusColor, parseStatusIcon } from '@perun-web-apps/perun/utils';
-import { AttributesManagerService } from '@perun-web-apps/perun/openapi';
+import {MembersService} from '@perun-web-apps/perun/services';
+import {RichMember} from '@perun-web-apps/perun/openapi';
+import {Urns} from '@perun-web-apps/perun/urns';
+import {parseFullName, parseStatusColor, parseStatusIcon} from '@perun-web-apps/perun/utils';
+import {AttributesManagerService} from '@perun-web-apps/perun/openapi';
 
 @Component({
   selector: 'app-member-overview',
@@ -23,7 +23,8 @@ export class MemberOverviewComponent implements OnInit {
     private membersService: MembersService,
     private translate: TranslateService,
     private route: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   fullName = '';
   statusIcon = '';
@@ -46,7 +47,7 @@ export class MemberOverviewComponent implements OnInit {
         this.initNavItems();
 
         this.attributesManager.getMemberAttributeByName(this.member.id, Urns.MEMBER_DEF_EXPIRATION).subscribe(attr => {
-          this.expiration = attr.value === null ? this.translate.instant('MEMBER_DETAIL.OVERVIEW.NEVER_EXPIRES') : attr.value;
+          this.expiration = attr.value === null ? this.translate.instant('MEMBER_DETAIL.OVERVIEW.NEVER_EXPIRES') : <string><unknown>attr.value;
         });
       });
     });

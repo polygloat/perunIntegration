@@ -1,6 +1,6 @@
 {
   "config": "default",
-  "api_url": "http://localhost/krb/rpc",
+  "api_url": "https://perun-dev.cesnet.cz/oauth/rpc",
   "version": "0.0.0",
 
   "oidc_client" : {

@@ -2,7 +2,7 @@ import {Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import {NotificatorService} from '../../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import {AttributesListComponent} from '../../../../../shared/components/attributes-list/attributes-list.component';
 import {SelectionModel} from '@angular/cdk/collections';
 import {

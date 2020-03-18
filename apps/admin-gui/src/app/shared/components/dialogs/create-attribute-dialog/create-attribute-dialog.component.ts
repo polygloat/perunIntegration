@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {AttributesListComponent} from '../../attributes-list/attributes-list.component';
 import {NotificatorService} from '../../../../core/services/common/notificator.service';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslateService} from 'ngx-polygloat';
 import { AttrEntity } from '@perun-web-apps/perun/models';
 import { filterCoreAttributes } from '@perun-web-apps/perun/utils';
 import { Attribute, AttributesManagerService } from '@perun-web-apps/perun/openapi';

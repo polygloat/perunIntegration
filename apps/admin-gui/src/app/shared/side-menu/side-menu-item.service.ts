@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { EntityMenuLink, SideMenuItem } from './side-menu.component';
 import { AuthResolverService } from '../../core/services/common/auth-resolver.service';
 import { Facility, Group, Resource, RichMember, User, Vo } from '@perun-web-apps/perun/openapi';

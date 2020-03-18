@@ -4,7 +4,7 @@ import { Group } from '@perun-web-apps/perun/openapi';
 import { GroupService } from '@perun-web-apps/perun/services';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NotificatorService } from '../../../../core/services/common/notificator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 
 export interface CreateRelationDialogData {
   theme: string,

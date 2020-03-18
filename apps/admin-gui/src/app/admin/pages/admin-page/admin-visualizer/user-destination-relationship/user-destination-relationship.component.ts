@@ -2,7 +2,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from 'ngx-polygloat';
 import { Router } from '@angular/router';
 import { MatStepper } from '@angular/material';
 import { NotificatorService } from '../../../../../core/services/common/notificator.service';
