@@ -183,8 +183,8 @@ import { ExtSourceTypePipe } from './pipes/ext-source-type.pipe';
     MatSidenavModule,
     MatExpansionModule,
     NgxPolygloatModule.forRoot({
-      apiKey: "knks527b0mh6iotn3e0mmdgmrr",
-      apiUrl: "http://localhost:8080"
+      //apiKey: "",
+      apiUrl: "https://cloud4.perun-aai.org"
     }),
     //TranslateModule.forChild({}),
     MatButtonModule,

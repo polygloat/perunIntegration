@@ -67,23 +67,9 @@ const loadConfigs = (appConfig: AppConfigService) => {
     AppRoutingModule,
     MatIconModule,
     ApiModule,
-    NgxPolygloatModule.forRoot({
-      apiKey: "knks527b0mh6iotn3e0mmdgmrr",
-      apiUrl: "http://localhost:8080"
-    }),
   ],
   providers: [
     AppConfigService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (service: TranslateService) => {
-        return async () => {
-          await service.get("").toPromise();
-        }
-      },
-      deps: [TranslateService],
-      multi: true
-    },
     AppConfigService,
     {
       provide: APP_INITIALIZER,

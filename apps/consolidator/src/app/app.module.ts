@@ -29,10 +29,6 @@ import {ConsolidationErrorPipe} from './components/consolidation-error.pipe';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxPolygloatModule.forRoot({
-      apiKey: "knks527b0mh6iotn3e0mmdgmrr",
-      apiUrl: "http://localhost:8080"
-    }),
     UiModule,
     UiMaterialModule,
     UiAlertsModule
